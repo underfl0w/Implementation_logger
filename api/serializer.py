@@ -1,4 +1,5 @@
 from rest_framework import serializers
+
 from api.models import *
 
 
@@ -12,7 +13,7 @@ class groupSerializer(serializers.HyperlinkedModelSerializer):
 class devicesSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = devices
-        fields = ('uuid', 'group')
+        fields = ('uuid', 'group', 'hashes')
 
 class configurationSerializer(serializers.HyperlinkedModelSerializer):
 
@@ -27,3 +28,4 @@ class zipFilesSerializer(serializers.HyperlinkedModelSerializer):
 
         model = zipFiles
         fields = ('zipfile', 'device')
+
