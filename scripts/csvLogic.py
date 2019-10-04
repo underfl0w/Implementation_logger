@@ -20,11 +20,10 @@ def filechanged(changed_files, all_hashes):
     print(files)
 
 def checkPrevious(device, hashes):
-    if(x == "")
-        return 0
-
     r = requests.get(device)
     x = json.loads(json.dumps(r.json()))
+    if(x == ""):
+        return 0
     x = json.loads((x["hashes"]))
     hashes = json.loads(hashes)
     if(x == hashes):
