@@ -24,7 +24,11 @@ def checkPrevious(device, hashes):
     x = json.loads(json.dumps(r.json()))
     if(x == ""):
         return 0
-    x = json.loads((x["hashes"]))
+    try:
+        x = json.loads((x["hashes"]))
+    except:
+        print("Something went wrong")
+        return 0
     hashes = json.loads(hashes)
     if(x == hashes):
         result = jsondiff.diff(x, hashes)
